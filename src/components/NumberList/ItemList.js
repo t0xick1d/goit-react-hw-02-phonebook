@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import style from './NumberList.module.css';
 
 function ItemList({ id, name, number, deleteContact }) {
@@ -18,3 +19,10 @@ function ItemList({ id, name, number, deleteContact }) {
 }
 
 export default ItemList;
+
+ItemList.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
+  deleteContact: PropTypes.func.isRequired,
+};

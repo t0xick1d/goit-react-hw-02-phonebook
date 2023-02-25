@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import ItemList from './ItemList';
 
 import style from './NumberList.module.css';
@@ -10,6 +11,7 @@ function NumberList({ list, deleteContact }) {
         {list.map(e => {
           return (
             <ItemList
+              key={e.id}
               id={e.id}
               name={e.name}
               number={e.number}
@@ -23,3 +25,12 @@ function NumberList({ list, deleteContact }) {
 }
 
 export default NumberList;
+
+NumberList.propTypes = {
+  list: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  deleteContact: PropTypes.func.isRequired,
+};

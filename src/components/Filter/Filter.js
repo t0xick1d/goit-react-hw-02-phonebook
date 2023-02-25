@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import style from './Filter.module.css';
 
 function Filter({ filter, onFilterChage }) {
@@ -16,3 +18,8 @@ function Filter({ filter, onFilterChage }) {
 }
 
 export default Filter;
+
+Filter.propTypes = {
+  filter: PropTypes.string.isRequired,
+  onFilterChage: PropTypes.func.isRequired,
+};
